@@ -1,6 +1,6 @@
 {
   "name": "homebridge-th10-fridge-freezer-alarm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HomeBridge Plugin to create a HomeKit Freezer Alarm using a Sonoff TH10 Smart WiFi Switch running Tasmota firmware and with an attached DS18B20 temperature sensor.",
   "main": "index.js",
   "scripts": {
@@ -24,6 +24,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/J1mbo/homebridge-TH10-Fridge-Freezer-Alarm/issues"
+  },
+  "engines": {
+    "homebridge": ">=1.0.0"
   },
   "homepage": "https://github.com/J1mbo/homebridge-TH10-Fridge-Freezer-Alarm#readme"
 }

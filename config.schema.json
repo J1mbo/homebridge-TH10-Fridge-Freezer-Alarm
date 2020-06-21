@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "FridgeFreezerAlarm",
+  "pluginAlias": "TH10FridgeFreezerAlarm",
   "pluginType": "accessory",
   "singular": false,
   "headerDisplay": "This plugin creates a fridge or freezer alarm using a Sonoff TH10 WiFi switch, running Tasmota firmware, with a DS18B20 temperature sensor attached and installed within the appliance.",
