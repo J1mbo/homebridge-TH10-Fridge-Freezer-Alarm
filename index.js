@@ -16,7 +16,7 @@ var request = require('request');
 
 // HomeKit API registration
 module.exports = (api) => {
-  api.registerAccessory('FridgeFreezerAlarm', TH10FridgeFreezerAlarm);
+  api.registerAccessory('TH10FridgeFreezerAlarm', TH10FridgeFreezerAlarm);
 }
 
 
