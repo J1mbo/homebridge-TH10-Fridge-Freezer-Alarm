@@ -1,0 +1,69 @@
+{
+  "pluginAlias": "FridgeFreezerAlarm",
+  "pluginType": "accessory",
+  "singular": false,
+  "headerDisplay": "This plugin creates a fridge or freezer alarm using a Sonoff TH10 WiFi switch, running Tasmota firmware, with a DS18B20 temperature sensor attached and installed within the appliance.",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "title": "Name",
+        "type": "string",
+        "description": "Appliance Display Name",
+        "default": "My Appliance",
+        "required": true
+      },
+      "th10IpAddress": {
+        "title": "Sonoff TH10 IP Address",
+        "type": "string",
+        "description": "IP address of the sensor device.",
+        "required": true,
+	"format": "ipv4"
+      },
+      "alertTemperature": {
+        "title": "Alert temperature (in Celcius)",
+        "type": "integer",
+        "default": -9,
+        "description": "The recorded temperature at which to set alarm state. Recommended -9 for freezers and 10 for fridges.",
+        "required": true
+      },
+      "pollInterval": {
+        "title": "Interval (in seconds) to poll the status",
+        "type": "integer",
+        "default": 60,
+        "description": "The TH10 can take a while to respond and it's not really necessary to check at intervals less than one minute.",
+        "required": true
+      },
+      "alertCount": {
+        "title": "Alert State Count",
+        "type": "integer",
+        "default": 2,
+        "description": "Number of consecutive over-threshold readings that must be made before triggering the alert state in HomeKit (reduces alerts from normal use i.e. opening the door).",
+        "required": true
+      },
+      "th10StatusLocation": {
+        "title": "Sonoff TH10 status URL",
+        "type": "string",
+        "description": "URL to retrieve current status from device.",
+        "default": "/cm?cmnd=status%208",
+        "required": true
+      },
+      "hysteresis": {
+        "title": "Hysteresis",
+        "type": "integer",
+        "description": "The amount by which the recorded temperature must fall to clear an alarm state (in degrees Kelvin/Celcius).",
+        "default": 3,
+        "required": true
+      }
+    }
+  },
+  "form": ["name", "th10IpAddress", "alertTemperature",
+    {
+      "type": "fieldset",
+      "expandable": true,
+      "title": "Advanced Settings",
+      "description": "Leave these at defaults unless troubleshooting.",
+      "items": ["pollInterval", "th10StatusLocation", "hysteresis", "alertCount"]
+    }
+  ], "display": null
+}
