@@ -55,7 +55,7 @@ class TH10FridgeFreezerAlarm {
         .setCharacteristic(this.Characteristic.SerialNumber, "N/App");
 
       this.contactSensor
-        .setCharacteristic(this.Characteristic.Name, "My Appliance")
+        .setCharacteristic(this.Characteristic.Name, this.name)
         .getCharacteristic(this.Characteristic.ContactSensorState)
         .on('get', this.getContactState.bind(this));
 
